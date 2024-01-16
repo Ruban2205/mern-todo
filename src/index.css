@@ -1,0 +1,17 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base { 
+  :root{
+    --primary-color: #163020;
+    --secondary-color: #304D30; 
+    --dark-color: #B6C4B6;
+    --light-color: #EEF0E5; 
+  }
+
+  body{
+    @apply bg-primary text-light; 
+    
+  }
+ }
