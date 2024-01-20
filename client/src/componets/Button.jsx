@@ -1,5 +1,6 @@
 import React from "react";
 
+// Dummy Button for future reference
 
 // Props for todo item
 /**
@@ -9,9 +10,12 @@ import React from "react";
 
 const Button = ({ children, className, ...props }) => {
     return (
-        <button className={`bg-purple-200 text-primary ${className}`} {...props}>{children}</button>
+        <button className={`bg-primary text-light px-5 py-2 rounded-full ${className}`} {...props}>{children}</button>
     )
 }
+
+// ...props for html attributes
+// classname is to extend the classes to the App.jsx
 
 /**
  * /components
