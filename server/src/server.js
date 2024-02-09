@@ -1,6 +1,7 @@
 const connect = require('./config/db.js')
 const express = require('express')
 const todo = require('./models/todo.js')
+const cors = require('cors')
 
 require('dotenv/config')
 
@@ -10,8 +11,11 @@ connect()
 const app = express();
 const port = 3000;
 
+
 // Express Middleware Objects
 app.use(express.json());
+
+app.use(cors())
 
 // get all todo
 app.get('/api/todos', async (req, res) => {
@@ -42,7 +46,7 @@ app.put('/api/todos/:id', async (req, res) => {
 })
 
 // Delete todo
-app.delete('/api/todo/:id', async (req, res) => {
+app.delete('/api/todos/:id', async (req, res) => {
     const id = req.params.id;
 
     await todo.deleteOne({ id: id });
